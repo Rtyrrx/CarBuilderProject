@@ -4,7 +4,7 @@
 
 **Student:** Bek Madias 
 **Course:** Software Design Patterns  
-**Instructor:** Almas Ospanov
+**Instructor:** Temirgaly Dinmukhammed
 
 ---
 
@@ -81,4 +81,5 @@ This project is for educational purposes only and does not include a public lice
 
 ## Contact
 If you need any changes (extra features, UML diagram, unit tests), open an issue or contact: **github.com/Rtyrrx**.
+
 
