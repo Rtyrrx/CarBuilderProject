@@ -1,4 +1,4 @@
-# Car Builder Pattern Implementation 🚗
+# Car Builder Pattern Implementation 
 
 **A simple Java example of the Builder design pattern with Clean Code principles.**
 
@@ -81,3 +81,4 @@ This project is for educational purposes only and does not include a public lice
 
 ## Contact
 If you need any changes (extra features, UML diagram, unit tests), open an issue or contact: **github.com/Rtyrrx**.
+
