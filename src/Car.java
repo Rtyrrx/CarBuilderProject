@@ -1,4 +1,3 @@
-// Product class
 public class Car {
     private final int seats;
     private final String engine;
@@ -7,7 +6,6 @@ public class Car {
     private final boolean hasGPS;
     private final boolean hasTripComputer;
 
-    // Private constructor ensures object creation through Builder only
     private Car(Builder builder) {
         this.seats = builder.seats;
         this.engine = builder.engine;
@@ -17,7 +15,6 @@ public class Car {
         this.hasTripComputer = builder.hasTripComputer;
     }
 
-    // Getters (no setters to keep object immutable)
     public int getSeats() {
         return seats;
     }
@@ -54,12 +51,11 @@ public class Car {
                 '}';
     }
 
-    // Static nested Builder class
     public static class Builder {
         private int seats;
         private String engine;
-        private String brand = "Generic"; // default value
-        private String color = "Black"; // default value
+        private String brand = "Generic";
+        private String color = "Black";
         private boolean hasGPS;
         private boolean hasTripComputer;
 
@@ -93,18 +89,39 @@ public class Car {
             return this;
         }
 
+        public static Car sportsCar() {
+            return new Builder()
+                    .setSeats(2)
+                    .setEngine("V8 Turbo")
+                    .setBrand("Ferrari")
+                    .setColor("Red")
+                    .enableGPS()
+                    .enableTripComputer()
+                    .build();
+        }
+
+        public static Car familyCar() {
+            return new Builder()
+                    .setSeats(5)
+                    .setEngine("V6")
+                    .setBrand("Toyota")
+                    .setColor("Blue")
+                    .enableGPS()
+                    .build();
+        }
+
         public Car build() {
-            validateCarConfiguration();
+            // validateCarConfiguration();
             return new Car(this);
         }
 
-        private void validateCarConfiguration() {
-            if (seats <= 0) {
-                throw new IllegalArgumentException("Car must have at least one seat.");
-            }
-            if (engine == null || engine.isEmpty()) {
-                throw new IllegalArgumentException("Engine type must be specified.");
-            }
-        }
+        // private void validateCarConfiguration() {
+        // if (seats <= 0) {
+        // throw new IllegalArgumentException("Car must have at least one seat");
+        // }
+        // if (engine == null || engine.isEmpty()) {
+        // throw new IllegalArgumentException("Engine type must be specified");
+        // }
+        // }
     }
 }
